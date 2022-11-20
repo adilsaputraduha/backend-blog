@@ -29,8 +29,8 @@ module.exports = {
                 SELECT * FROM table_quote ORDER BY RAND() LIMIT 1;
                 -- Count
                 SELECT COUNT(*) AS count FROM table_article;
-                SELECT COUNT(*) AS count FROM table_service_contact WHERE service_status = 0;
-                SELECT COUNT(*) AS count FROM table_subscribe;
+                SELECT COUNT(*) AS count FROM table_project;
+                SELECT COUNT(*) AS count FROM table_category;
                 SELECT COALESCE(SUM(article_views),0) AS count FROM table_article;
                 -- Top Article
                 SELECT * FROM table_article ORDER BY article_views DESC LIMIT 10;
@@ -49,8 +49,8 @@ module.exports = {
                         moment: moment,
                         quote: results[0],
                         countArticle: results[1][0]["count"],
-                        countMessage: results[2][0]["count"],
-                        countSubs: results[3][0]["count"],
+                        countProject: results[2][0]["count"],
+                        countCategory: results[3][0]["count"],
                         countVisit: 0,
                         topArticle: results[5],
                         topKeyword: results[6],

@@ -87,21 +87,23 @@
                             <span class="count-name">Article</span>
                         </div>
                     </a>
-                    <a href="<%= url %>app/inbox" class="col-md-3">
+                    <a href="<%= url %>app/project" class="col-md-3">
                         <div class="card-counter primary">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-desktop"></i>
                             <span class="count-numbers">
-                                <%if (countMessage) { %> <%= countMessage %> <%
+                                <%if (countProject) { %> <%= countProject %> <%
                                 }else{ %> 0 <% } %>
                             </span>
-                            <span class="count-name">Messages</span>
+                            <span class="count-name">Project</span>
                         </div>
                     </a>
-                    <a href="<%= url %>app/subscriber" class="col-md-3">
+                    <a href="<%= url %>app/category" class="col-md-3">
                         <div class="card-counter primary">
-                            <i class="fa fa-users"></i>
-                            <span class="count-numbers"><%= countSubs %></span>
-                            <span class="count-name">Subscriber</span>
+                            <i class="fa fa-sitemap"></i>
+                            <span class="count-numbers"
+                                ><%= countCategory %></span
+                            >
+                            <span class="count-name">Category</span>
                         </div>
                     </a>
                     <div class="col-md-3">

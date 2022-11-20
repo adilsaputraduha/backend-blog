@@ -52,7 +52,7 @@ module.exports = {
                 },
                 function (error, results) {
                     if (error) throw error;
-                    res.redirect("/app/tags");
+                    res.redirect("/app/tags-stack");
                 }
             );
             connection.release();
@@ -68,7 +68,7 @@ module.exports = {
                 [req.body.name, req.body.id],
                 function (error, results) {
                     if (error) throw error;
-                    res.redirect("/app/tags");
+                    res.redirect("/app/tags-stack");
                 }
             );
             connection.release();

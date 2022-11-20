@@ -97,7 +97,7 @@
                                 type="button"
                                 class="btn btn-primary text-light ml-3"
                                 data-toggle="modal"
-                                data-target="#add"
+                                data-target="#addStack"
                                 >Add new stack</a
                             >
                         </div>
@@ -213,6 +213,56 @@
                 </div>
             </div>
         </form>
+        <form action="<%= url %>app/stack/save" method="POST">
+            <div
+                class="modal fade"
+                id="addStack"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="thumb"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="thumb">Add Stack</h5>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value=""
+                                    name="name"
+                                    placeholder="Type new name stack"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
         <% category.forEach(function(data) { %>
         <form action="<%= url %>app/tags/update" method="POST">
             <div
@@ -228,7 +278,7 @@
                         <div class="modal-header">
                             <h5
                                 class="modal-title"
-                                id="thumb<%= data.article_id %>"
+                                id="thumb<%= data.tagar_id %>"
                             >
                                 Edit Tags
                             </h5>
@@ -252,6 +302,66 @@
                                     type="text"
                                     class="form-control"
                                     value="<%= data.tagar_name %>"
+                                    name="name"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <% }); %> <% stack.forEach(function(data) { %>
+        <form action="<%= url %>app/stack/update" method="POST">
+            <div
+                class="modal fade"
+                id="edit<%= data.stack_id %>"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="thumb"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5
+                                class="modal-title"
+                                id="thumb<%= data.stack_id %>"
+                            >
+                                Edit Stack
+                            </h5>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <input
+                                    type="hidden"
+                                    name="id"
+                                    value="<%= data.stack_id %>"
+                                />
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="<%= data.stack_name %>"
                                     name="name"
                                     required
                                 />
