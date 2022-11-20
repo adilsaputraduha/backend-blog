@@ -45,7 +45,7 @@ module.exports = {
         });
     },
     save(req, res) {
-        let pass = bcrypt.hashSync("1234", 10);
+        let pass = bcrypt.hashSync("123456", 10);
         pool.getConnection(function (err, connection) {
             if (err) throw err;
             connection.query(
@@ -56,6 +56,7 @@ module.exports = {
                     user_password: pass,
                     user_level: req.body.level,
                     user_status: 1,
+                    user_image: "no-photo.png",
                 },
                 function (error, results) {
                     if (error) throw error;
@@ -75,6 +76,23 @@ module.exports = {
                 user_status = ?
             WHERE user_id = ?`,
                 [req.body.name, req.body.level, req.body.status, req.body.id],
+                function (error, results) {
+                    if (error) throw error;
+                    res.redirect("/app/user");
+                }
+            );
+            connection.release();
+        });
+    },
+    reset(req, res) {
+        let pass = bcrypt.hashSync("123456", 10);
+        pool.getConnection(function (err, connection) {
+            if (err) throw err;
+            connection.query(
+                `UPDATE table_user SET 
+                user_password = ?
+            WHERE user_id = ?`,
+                [pass, req.body.iduser],
                 function (error, results) {
                     if (error) throw error;
                     res.redirect("/app/user");

@@ -138,9 +138,9 @@
                                                 type="button"
                                                 class="badge badge-primary text-light"
                                                 data-toggle="modal"
-                                                data-target="#edit<%= data.tagar_id %>"
+                                                data-target="#resetpassword<%= data.user_id %>"
                                             >
-                                                Edit
+                                                Reset
                                             </a>
                                         </td>
                                     </tr>
@@ -175,7 +175,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="input-group">
+                            <div class="form-group">
+                                <label for="">Email</label>
                                 <input
                                     type="email"
                                     class="form-control"
@@ -185,7 +186,8 @@
                                     required
                                 />
                             </div>
-                            <div class="input-group mt-4">
+                            <div class="form-group mt-4">
+                                <label for="">Name</label>
                                 <input
                                     type="text"
                                     class="form-control"
@@ -195,7 +197,8 @@
                                     required
                                 />
                             </div>
-                            <div class="input-group mt-4">
+                            <div class="form-group mt-4">
+                                <label for="">Level</label>
                                 <select
                                     name="level"
                                     id="level"
@@ -237,7 +240,7 @@
                         <div class="modal-header">
                             <h5
                                 class="modal-title"
-                                id="thumb<%= data.article_id %>"
+                                id="reset<%= data.user_id %>"
                             >
                                 Edit User
                             </h5>
@@ -251,39 +254,50 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="input-group">
+                            <input
+                                type="hidden"
+                                name="id"
+                                value="<%= data.user_id %>"
+                            />
+                            <div class="form-group">
+                                <label for="">Email</label>
                                 <input
-                                    type="hidden"
-                                    name="id"
-                                    value="<%= data.user_id %>"
+                                    type="email"
+                                    class="form-control"
+                                    value="<%= data.user_email %>"
+                                    name="email"
+                                    required
+                                    readonly
                                 />
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="">Name</label>
                                 <input
                                     type="text"
                                     class="form-control"
-                                    value="<%= data.user_email %>"
+                                    value="<%= data.user_name %>"
                                     name="name"
+                                    placeholder="Type new name user"
                                     required
                                 />
-                                <div class="input-group mt-4">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        value="<%= data.user_name %>"
-                                        name="name"
-                                        placeholder="Type new name user"
-                                        required
-                                    />
-                                </div>
-                                <div class="input-group mt-4">
-                                    <select
-                                        name="level"
-                                        id="level"
-                                        class="form-control"
-                                    >
-                                        <option value="0">Administrator</option>
-                                        <option value="1">Writer</option>
-                                    </select>
-                                </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="">Level</label>
+                                <select
+                                    name="level"
+                                    id="level"
+                                    class="form-control"
+                                >
+                                    <% if(data.user_level === 0) { %>
+                                    <option selected value="0">
+                                        Administrator
+                                    </option>
+                                    <option value="1">Writer</option>
+                                    <% } else { %>
+                                    <option selected value="1">Writer</option>
+                                    <option value="0">Administrator</option>
+                                    <% } %>
+                                </select>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -296,6 +310,60 @@
                             </button>
                             <button type="submit" class="btn btn-primary">
                                 Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form action="<%= url %>app/user/reset" method="POST">
+            <div
+                class="modal fade"
+                id="resetpassword<%= data.user_id %>"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="thumb"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5
+                                class="modal-title"
+                                id="reset<%= data.user_id %>"
+                            >
+                                Reset Password
+                            </h5>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input
+                                type="hidden"
+                                name="iduser"
+                                id="iduser"
+                                value="<%= data.user_id %>"
+                            />
+                            <h6>
+                                Password user ini akan direset menjadi '123456'
+                            </h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Yes
                             </button>
                         </div>
                     </div>

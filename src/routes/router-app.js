@@ -74,5 +74,6 @@ router.post(
 router.get("/user", verifyUser.isLogin, usersController.list);
 router.post("/user/save", verifyUser.isLogin, usersController.save);
 router.post("/user/update", verifyUser.isLogin, usersController.update);
+router.post("/user/reset", verifyUser.isLogin, usersController.reset);
 
 module.exports = router;
