@@ -47,6 +47,8 @@ module.exports = {
                                     req.session.loggedin = true;
                                     req.session.userid = results[0].user_id;
                                     req.session.username = results[0].user_name;
+                                    req.session.useremail =
+                                        results[0].user_email;
                                     res.redirect("/app");
                                 } else {
                                     req.flash(

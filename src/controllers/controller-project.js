@@ -82,6 +82,7 @@ module.exports = {
                     project_desc: req.body.desc,
                     project_stack: stack.join(),
                     project_url: req.body.url,
+                    project_link: req.body.status,
                 },
                 function (error, results) {
                     if (error) throw error;
@@ -102,7 +103,8 @@ module.exports = {
                 project_slug = ?,
                 project_desc = ?,
                 project_stack = ?,
-                project_url = ?
+                project_url = ?,
+                project_link = ?
             WHERE project_id = ?`,
                 [
                     req.body.name,
@@ -110,6 +112,7 @@ module.exports = {
                     req.body.desc,
                     stack.join(),
                     req.body.url,
+                    req.body.status,
                     req.body.id,
                 ],
                 function (error, results) {

@@ -217,7 +217,7 @@
                                     <div
                                         style="
                                             overflow-y: scroll;
-                                            height: 150px;
+                                            height: 200px;
                                             margin-bottom: 30px;
                                         "
                                     >
@@ -238,6 +238,37 @@
                                             </label>
                                         </div>
                                         <% }); %>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            name="status"
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptions"
+                                            id="inlineRadio1"
+                                            value="0"
+                                            checked
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio1"
+                                            >Full Link</label
+                                        >
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            name="status"
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptions"
+                                            id="inlineRadio2"
+                                            value="1"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio2"
+                                            >From 000webhostapp</label
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +367,7 @@
                                     <div
                                         style="
                                             overflow-y: scroll;
-                                            height: 150px;
+                                            height: 200px;
                                             margin-bottom: 30px;
                                         "
                                     >
@@ -357,6 +388,32 @@
                                             </label>
                                         </div>
                                         <% }); %>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="status"
+                                        class="form-check-input" type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio1" value="0" <%if
+                                        (data.project_link == 0) { %> checked <%
+                                        } %> />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio1"
+                                            >Full Link</label
+                                        >
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="status"
+                                        class="form-check-input" type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio2" value="1" <%if
+                                        (data.project_link == 1) { %> checked <%
+                                        } %> />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio2"
+                                            >From 000webhostapp</label
+                                        >
                                     </div>
                                 </div>
                             </div>

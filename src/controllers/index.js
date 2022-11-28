@@ -6,6 +6,7 @@ const tags = require("./controller-tags");
 const users = require("./controller-users");
 const project = require("./controller-project");
 const stack = require("./controller-stack");
+const profil = require("./controller-profil");
 const api = require("./controller-api");
 
 module.exports = {
@@ -17,5 +18,6 @@ module.exports = {
     users,
     project,
     stack,
+    profil,
     api,
 };

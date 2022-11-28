@@ -7,6 +7,7 @@ const tagsController = require("../controllers").tags;
 const usersController = require("../controllers").users;
 const projectController = require("../controllers").project;
 const stackController = require("../controllers").stack;
+const profilController = require("../controllers").profil;
 
 router.get("/", verifyUser.isLogin, homeController.home);
 // Article
@@ -75,5 +76,8 @@ router.get("/user", verifyUser.isLogin, usersController.list);
 router.post("/user/save", verifyUser.isLogin, usersController.save);
 router.post("/user/update", verifyUser.isLogin, usersController.update);
 router.post("/user/reset", verifyUser.isLogin, usersController.reset);
+// Profil
+router.get("/profil", verifyUser.isLogin, profilController.list);
+router.post("/profil/update", verifyUser.isLogin, profilController.update);
 
 module.exports = router;
