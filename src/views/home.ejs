@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div class="row mt-4">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <h4>Top 10 Articles</h4>
                         <div class="table-responsive">
                             <table class="table">
@@ -198,28 +198,6 @@
                                 <% }); %>
                             </table>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Top 10 Keyword</h4>
-                        <table class="table">
-                            <thead class="bg-primary text-white">
-                                <tr>
-                                    <th scope="col">Keyword</th>
-                                    <th scope="col">Date</th>
-                                </tr>
-                            </thead>
-                            <% topKeyword.forEach(function(data) { %>
-                            <tbody>
-                                <tr>
-                                    <td><%= data.keyword_desc %></td>
-                                    <td>
-                                        <%= moment(data.date).format(
-                                        'DD-MMM-YYYY') %>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <% }); %>
-                        </table>
                     </div>
                 </div>
             </div>

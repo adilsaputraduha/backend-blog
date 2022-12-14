@@ -63,28 +63,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app">Home</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app/category"
-                                        >Category</a
-                                    >
-                                </li>
-                                <li
-                                    class="breadcrumb-item active"
-                                    aria-current="page"
-                                >
-                                    List
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
                         <div class="float-left">
                             <a
                                 type="button"
@@ -95,7 +73,7 @@
                             >
                         </div>
                         <div class="table-responsive pt-4">
-                            <table class="table mt-3 table-hover" id="example">
+                            <table class="table table-hover" id="example">
                                 <thead class="bg-primary text-white">
                                     <tr>
                                         <th style="width: 40%">Name</th>
@@ -103,8 +81,8 @@
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
-                                <% category.forEach(function(data) { %>
                                 <tbody>
+                                    <% category.forEach(function(data) { %>
                                     <tr>
                                         <td><%= data.category_name %></td>
                                         <td><%= data.category_slug %></td>
@@ -119,8 +97,8 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <% }); %>
                                 </tbody>
-                                <% }); %>
                             </table>
                         </div>
                     </div>

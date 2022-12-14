@@ -64,69 +64,62 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app">Home</a>
-                                </li>
-                                <li
-                                    class="breadcrumb-item active"
-                                    aria-current="page"
-                                >
-                                    Profil
-                                </li>
-                            </ol>
-                        </nav>
+                        <form
+                            action="<%= url %>app/profil/update"
+                            method="post"
+                        >
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input
+                                            type="text"
+                                            name="email"
+                                            id="email"
+                                            class="form-control"
+                                            readonly
+                                            value="<%= userEmail %>"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Nama</label>
+                                        <input
+                                            type="text"
+                                            name="nama"
+                                            id="nama"
+                                            class="form-control"
+                                            required
+                                            value="<%= userName %>"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Password Baru</label>
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            id="password"
+                                            class="form-control"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                    >
+                                        Update Profil
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <form action="<%= url %>app/profil/update" method="post">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input
-                                    type="text"
-                                    name="email"
-                                    id="email"
-                                    class="form-control"
-                                    readonly
-                                    value="<%= userEmail %>"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">Nama</label>
-                                <input
-                                    type="text"
-                                    name="nama"
-                                    id="nama"
-                                    class="form-control"
-                                    required
-                                    value="<%= userName %>"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">Password Baru</label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    class="form-control"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">
-                                Update Profil
-                            </button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </section>
     </body>

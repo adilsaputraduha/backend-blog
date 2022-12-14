@@ -68,26 +68,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app">Home</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app/project">Project</a>
-                                </li>
-                                <li
-                                    class="breadcrumb-item active"
-                                    aria-current="page"
-                                >
-                                    List
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
                         <div class="float-left">
                             <a
                                 type="button"
@@ -100,7 +80,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="table-responsive pt-4">
-                            <table class="table mt-3 table-hover" id="example">
+                            <table class="table table-hover" id="example">
                                 <thead class="bg-primary text-white">
                                     <tr>
                                         <th scope="col">Name</th>
@@ -109,8 +89,8 @@
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
-                                <% project.forEach(function(data) { %>
                                 <tbody>
+                                    <% project.forEach(function(data) { %>
                                     <tr>
                                         <td><%= data.project_name %></td>
                                         <td>
@@ -146,8 +126,8 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <% }); %>
                                 </tbody>
-                                <% }); %>
                             </table>
                         </div>
                     </div>
@@ -198,6 +178,7 @@
                                             cols="30"
                                             rows="10"
                                             class="form-control"
+                                            required
                                         ></textarea>
                                     </div>
                                     <div class="form-group">
@@ -209,6 +190,24 @@
                                             name="url"
                                             placeholder="Type new url project"
                                             required
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Username</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="username"
+                                            placeholder="Type new username project"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="password"
+                                            placeholder="Type new password project"
                                         />
                                     </div>
                                 </div>
@@ -268,6 +267,38 @@
                                             class="form-check-label"
                                             for="inlineRadio2"
                                             >From 000webhostapp</label
+                                        >
+                                    </div>
+                                    <hr />
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            name="typeproject"
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptionsType"
+                                            id="inlineRadio11"
+                                            value="0"
+                                            checked
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio11"
+                                            >Page Web</label
+                                        >
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            name="typeproject"
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptionsType"
+                                            id="inlineRadio22"
+                                            value="1"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio22"
+                                            >Page Mobile</label
                                         >
                                     </div>
                                 </div>
@@ -346,6 +377,7 @@
                                             cols="30"
                                             rows="10"
                                             class="form-control"
+                                            required
                                         >
 <%= data.project_desc %></textarea
                                         >
@@ -359,6 +391,26 @@
                                             name="url"
                                             placeholder="Type new url project"
                                             required
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Username</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            value="<%= data.project_username %>"
+                                            name="username"
+                                            placeholder="Type new username project"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            value="<%= data.project_password %>"
+                                            name="password"
+                                            placeholder="Type new password project"
                                         />
                                     </div>
                                 </div>
@@ -413,6 +465,33 @@
                                             class="form-check-label"
                                             for="inlineRadio2"
                                             >From 000webhostapp</label
+                                        >
+                                    </div>
+                                    <hr />
+                                    <div class="form-check form-check-inline">
+                                        <input name="typeproject"
+                                        class="form-check-input" type="radio"
+                                        name="inlineRadioOptionsType"
+                                        id="inlineRadio11" value="0" <%if
+                                        (data.project_type == 0) { %> checked <%
+                                        } %> />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio11"
+                                            >Page Web</label
+                                        >
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="typeproject"
+                                        class="form-check-input" type="radio"
+                                        name="inlineRadioOptionsType"
+                                        id="inlineRadio22" value="1" <%if
+                                        (data.project_type == 1) { %> checked <%
+                                        } %> />
+                                        <label
+                                            class="form-check-label"
+                                            for="inlineRadio22"
+                                            >Page Mobile</label
                                         >
                                     </div>
                                 </div>

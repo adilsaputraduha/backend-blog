@@ -83,28 +83,6 @@
 
         <section class="mt-4 pb-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app">Home</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="<%= url %>app/article">Article</a>
-                                </li>
-                                <li
-                                    class="breadcrumb-item active"
-                                    aria-current="page"
-                                >
-                                    Edit : <%= article.article_title %>
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
                 <form action="<%= url %>app/article/update" method="POST">
                     <div class="row">
                         <div class="col-md-8">

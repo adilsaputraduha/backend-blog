@@ -97,6 +97,25 @@ module.exports = {
             connection.release();
         });
     },
+    popularProject(req, res) {
+        pool.getConnection(function (err, connection) {
+            if (err) throw err;
+            connection.query(
+                `
+                SELECT * FROM table_project LIMIT 4;
+                `,
+                function (error, results) {
+                    if (error) throw error;
+                    res.send({
+                        success: true,
+                        message: "Berhasil ambil data",
+                        data: results,
+                    });
+                }
+            );
+            connection.release();
+        });
+    },
     detailProject(req, res) {
         let slug = req.params.id;
         pool.getConnection(function (err, connection) {
@@ -113,6 +132,45 @@ module.exports = {
                         message: "Berhasil ambil data",
                         data: results[0],
                         detail: results[1],
+                    });
+                }
+            );
+            connection.release();
+        });
+    },
+    allCategory(req, res) {
+        pool.getConnection(function (err, connection) {
+            if (err) throw err;
+            connection.query(
+                `
+                SELECT * FROM table_category;
+                `,
+                function (error, results) {
+                    if (error) throw error;
+                    res.send({
+                        success: true,
+                        message: "Berhasil ambil data",
+                        data: results,
+                    });
+                }
+            );
+            connection.release();
+        });
+    },
+    detailCategory(req, res) {
+        let slug = req.params.id;
+        pool.getConnection(function (err, connection) {
+            if (err) throw err;
+            connection.query(
+                `
+                SELECT * FROM table_article JOIN table_category ON article_category = category_id WHERE category_slug = '${slug}';
+                `,
+                function (error, results) {
+                    if (error) throw error;
+                    res.send({
+                        success: true,
+                        message: "Berhasil ambil data",
+                        data: results,
                     });
                 }
             );

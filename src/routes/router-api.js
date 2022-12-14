@@ -7,5 +7,9 @@ router.get("/popular-article", apiController.popularArticle);
 
 router.get("/project", apiController.allProject);
 router.get("/project/:id", apiController.detailProject);
+router.get("/popular-project", apiController.popularProject);
+
+router.get("/category", apiController.allCategory);
+router.get("/category/:id", apiController.detailCategory);
 
 module.exports = router;

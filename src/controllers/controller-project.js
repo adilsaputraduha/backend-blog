@@ -83,6 +83,9 @@ module.exports = {
                     project_stack: stack.join(),
                     project_url: req.body.url,
                     project_link: req.body.status,
+                    project_username: req.body.username,
+                    project_password: req.body.password,
+                    project_type: req.body.typeproject,
                 },
                 function (error, results) {
                     if (error) throw error;
@@ -104,7 +107,10 @@ module.exports = {
                 project_desc = ?,
                 project_stack = ?,
                 project_url = ?,
-                project_link = ?
+                project_link = ?,
+                project_username = ?,
+                project_password = ?,
+                project_type = ?
             WHERE project_id = ?`,
                 [
                     req.body.name,
@@ -113,6 +119,9 @@ module.exports = {
                     stack.join(),
                     req.body.url,
                     req.body.status,
+                    req.body.username,
+                    req.body.password,
+                    req.body.typeproject,
                     req.body.id,
                 ],
                 function (error, results) {
