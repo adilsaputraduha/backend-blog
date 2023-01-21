@@ -71,7 +71,7 @@
                         <div class="float-left">
                             <a
                                 type="button"
-                                class="btn btn-primary text-light"
+                                class="btn btn-daadit text-light"
                                 data-toggle="modal"
                                 data-target="#add"
                                 >Add new</a
@@ -81,7 +81,7 @@
                     <div class="col-md-12">
                         <div class="table-responsive pt-4">
                             <table class="table table-hover" id="example">
-                                <thead class="bg-primary text-white">
+                                <thead class="bg-daadit text-white">
                                     <tr>
                                         <th scope="col">Name</th>
                                         <th scope="col">Url</th>
@@ -96,6 +96,7 @@
                                         <td>
                                             <a
                                                 href="<%= data.project_url %>"
+                                                class="text-daadit"
                                                 target="_blank"
                                                 ><%= data.project_url %></a
                                             >
@@ -104,25 +105,25 @@
                                         <td>
                                             <a
                                                 type="button"
-                                                class="badge badge-primary text-light"
+                                                class="btn btn-sm btn-daadit"
                                                 data-toggle="modal"
                                                 data-target="#thumbnail<%= data.project_id %>"
                                             >
-                                                Image
+                                                <i class="fa fa-image"></i>
                                             </a>
                                             <a
                                                 type="button"
-                                                class="badge badge-primary text-light"
+                                                class="btn btn-sm btn-daadit"
                                                 data-toggle="modal"
                                                 data-target="#edit<%= data.project_id %>"
                                             >
-                                                Edit
+                                                <i class="fa fa-pencil"></i>
                                             </a>
                                             <a
                                                 href="<%= url %>app/project/<%= data.project_slug %>"
-                                                class="badge badge-primary text-light"
+                                                class="btn btn-sm btn-daadit"
                                             >
-                                                Gallery
+                                                <i class="fa fa-file"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -312,7 +313,7 @@
                             >
                                 Close
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-daadit">
                                 Save
                             </button>
                         </div>
@@ -505,7 +506,7 @@
                             >
                                 Close
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-daadit">
                                 Save changes
                             </button>
                         </div>
@@ -573,7 +574,7 @@
                             >
                                 Close
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-daadit">
                                 Save changes
                             </button>
                         </div>

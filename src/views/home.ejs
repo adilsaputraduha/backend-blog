@@ -77,9 +77,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <a href="<%= url %>app/article" class="col-md-3">
-                        <div class="card-counter primary">
+                <div class="row mt-4 justify-content-center">
+                    <a href="<%= url %>app/article" class="col-6 col-sm-6 col-md-4 mt-3">
+                        <div class="card-counter bg-daadit">
                             <i class="fa fa-pencil"></i>
                             <span class="count-numbers"
                                 ><%= countArticle %></span
@@ -87,8 +87,8 @@
                             <span class="count-name">Article</span>
                         </div>
                     </a>
-                    <a href="<%= url %>app/project" class="col-md-3">
-                        <div class="card-counter primary">
+                    <a href="<%= url %>app/project" class="col-6 col-sm-6 col-md-4 mt-3">
+                        <div class="card-counter bg-daadit">
                             <i class="fa fa-desktop"></i>
                             <span class="count-numbers">
                                 <%if (countProject) { %> <%= countProject %> <%
@@ -97,8 +97,8 @@
                             <span class="count-name">Project</span>
                         </div>
                     </a>
-                    <a href="<%= url %>app/category" class="col-md-3">
-                        <div class="card-counter primary">
+                    <a href="<%= url %>app/category" class="col-6 col-sm-6 col-md-4 mt-3">
+                        <div class="card-counter bg-daadit">
                             <i class="fa fa-sitemap"></i>
                             <span class="count-numbers"
                                 ><%= countCategory %></span
@@ -106,26 +106,18 @@
                             <span class="count-name">Category</span>
                         </div>
                     </a>
-                    <div class="col-md-3">
-                        <div class="card-counter primary">
-                            <i class="fa fa-line-chart"></i>
-                            <span class="count-numbers"><%= countVisit %></span>
-                            <span class="count-name">Total Visits</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-md-12">
                         <h4>Top 5 Latest Articles</h4>
                         <div class="table-responsive">
                             <table class="table">
-                                <thead class="bg-primary text-white">
+                                <thead class="bg-daadit text-white">
                                     <tr>
                                         <th scope="col">Title</th>
                                         <th scope="col">Publish at</th>
                                         <th scope="col">Last Modify</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Views</th>
                                     </tr>
                                 </thead>
                                 <% topLatest.forEach(function(data) { %>
@@ -134,6 +126,7 @@
                                         <td>
                                             <a
                                                 href="app/article/edit/<%= data.article_id %>"
+                                                class="text-daadit"
                                                 ><%= data.article_title %></a
                                             >
                                         </td>
@@ -154,7 +147,7 @@
                                         <% } %>
                                         <td>
                                             <%if (data.article_status == 0) { %>
-                                            <span class="badge badge-success">
+                                            <span class="badge bg-daadit text-white">
                                                 Public
                                             </span>
                                             <% } else { %>
@@ -163,36 +156,6 @@
                                             </span>
                                             <% } %>
                                         </td>
-                                        <td><%= data.article_views %></td>
-                                    </tr>
-                                </tbody>
-                                <% }); %>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <h4>Top 10 Articles</h4>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class="bg-primary text-white">
-                                    <tr>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">Publish at</th>
-                                        <th scope="col">Views</th>
-                                    </tr>
-                                </thead>
-                                <% topArticle.forEach(function(data) { %>
-                                <tbody>
-                                    <tr>
-                                        <td><%= data.article_title %></td>
-                                        <td>
-                                            <%=
-                                            moment(data.article_date_post).format(
-                                            'DD-MMM-YYYY') %>
-                                        </td>
-                                        <td><%= data.article_views %></td>
                                     </tr>
                                 </tbody>
                                 <% }); %>

@@ -32,8 +32,6 @@ module.exports = {
                 SELECT COUNT(*) AS count FROM table_project;
                 SELECT COUNT(*) AS count FROM table_category;
                 SELECT COALESCE(SUM(article_views),0) AS count FROM table_article;
-                -- Top Article
-                SELECT * FROM table_article ORDER BY article_views DESC LIMIT 10;
                 -- Top Query
                 SELECT * FROM table_keyword_user ORDER BY id DESC LIMIT 10;
                 -- Latest Article
@@ -52,9 +50,8 @@ module.exports = {
                         countProject: results[2][0]["count"],
                         countCategory: results[3][0]["count"],
                         countVisit: 0,
-                        topArticle: results[5],
-                        topKeyword: results[6],
-                        topLatest: results[7],
+                        topKeyword: results[5],
+                        topLatest: results[6],
                     });
                 }
             );

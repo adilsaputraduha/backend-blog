@@ -88,13 +88,13 @@
                         <div class="float-left">
                             <a
                                 href="<%= url %>app/article/new"
-                                class="btn btn-primary"
+                                class="btn btn-daadit"
                                 >Write new</a
                             >
                         </div>
                         <div class="table-responsive pt-4">
                             <table class="table table-hover" id="example">
-                                <thead class="bg-primary text-white">
+                                <thead class="bg-daadit text-white">
                                     <tr>
                                         <th style="width: 40%">Title</th>
                                         <th scope="col">Publish</th>
@@ -110,6 +110,7 @@
                                         <td>
                                             <a
                                                 href="<%= url %>app/article/edit/<%= data.article_id %>"
+                                                class="text-daadit"
                                                 ><%= data.article_title %></a
                                             >
                                         </td>
@@ -122,7 +123,7 @@
                                         <td><%= data.article_views %></td>
                                         <td>
                                             <%if (data.article_status == 0) { %>
-                                            <span class="badge badge-success">
+                                            <span class="badge bg-daadit text-white">
                                                 Public
                                             </span>
                                             <% } else { %>
@@ -134,19 +135,19 @@
                                         <td>
                                             <a
                                                 type="button"
-                                                class="badge badge-primary text-light"
+                                                class="btn btn-sm btn-daadit"
                                                 data-toggle="modal"
                                                 data-target="#thumb<%= data.article_id %>"
                                             >
-                                                Image
+                                                <i class="fa fa-image"></i>
                                             </a>
                                             <a
                                                 type="button"
-                                                class="badge badge-primary text-light"
+                                                class="btn btn-sm btn-daadit"
                                                 data-toggle="modal"
                                                 data-target="#thumbName<%= data.article_id %>"
                                             >
-                                                Name
+                                                <i class="fa fa-tag"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -219,7 +220,7 @@
                             >
                                 Close
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-daadit">
                                 Save changes
                             </button>
                         </div>
@@ -282,7 +283,7 @@
                             >
                                 Close
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-daadit">
                                 Save changes
                             </button>
                         </div>
