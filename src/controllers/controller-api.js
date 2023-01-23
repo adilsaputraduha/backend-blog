@@ -102,7 +102,7 @@ module.exports = {
             if (err) throw err;
             connection.query(
                 `
-                SELECT * FROM table_project LIMIT 4;
+                SELECT * FROM table_project LIMIT 6;
                 `,
                 function (error, results) {
                     if (error) throw error;
@@ -163,7 +163,7 @@ module.exports = {
             if (err) throw err;
             connection.query(
                 `
-                SELECT * FROM table_article JOIN table_category ON article_category = category_id WHERE category_slug = '${slug}';
+                SELECT * FROM table_article JOIN table_category ON article_category = category_id WHERE article_status = 0 AND category_slug = '${slug}';
                 `,
                 function (error, results) {
                     if (error) throw error;
